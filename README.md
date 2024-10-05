@@ -1,6 +1,8 @@
 # LLM-API-TestSuite
 
 LLM-API-TestSuite 是一个前端项目，旨在对各家大模型（LLM）的 API 接口进行一致性和功能性测试。项目基于 OpenAI API 标准，但适用于多个不同的 LLM 接口，帮助开发者通过纯前端方式验证不同大模型的 API 是否符合预期标准。
+可以直接在这里用：https://cocosgt.github.io/LLM-API-TestSuite/
+
 
 ## 功能特性
 
