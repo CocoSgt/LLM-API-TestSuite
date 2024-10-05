@@ -1,0 +1,187 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #2c3e50;
+}
+
+.input-section {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+input[type="text"] {
+    flex: 1;
+    padding: 10px;
+    margin-right: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+.model-list {
+    margin-bottom: 20px;
+}
+
+.model-item {
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #eee;
+    border-radius: 4px;
+}
+
+.model-item:last-child {
+    border-bottom: none;
+}
+
+.model-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex: 1;
+    min-width: 0; /* 这行很重要，允许子元素缩小到小于其内容大小 */
+}
+
+.model-indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+    flex-shrink: 0; /* 防止指示器被压缩 */
+}
+
+.model-indicator.loading {
+    background-color: #f39c12;
+    animation: pulse 1s infinite;
+}
+
+.model-indicator.success {
+    background-color: #2ecc71;
+}
+
+.model-indicator.error {
+    background-color: #e74c3c;
+}
+
+.model-latency {
+    font-size: 0.8em;
+    color: #7f8c8d;
+    flex-shrink: 0; /* 防止延迟信息被压缩 */
+    margin-left: auto; /* 将延迟信息推到右侧 */
+    padding-right: 10px; /* 给测试按钮留出一些空间 */
+}
+
+.model-name {
+    flex: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-width: 0; /* 允许文本被截断 */
+}
+
+.show-more-button {
+    grid-column: 1 / -1;
+    padding: 10px;
+    background-color: #f1f1f1;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    color: #333;
+    font-weight: bold;
+}
+
+.show-more-button:hover {
+    background-color: #e1e1e1;
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 0.5;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.5;
+    }
+}
+
+@media (max-width: 650px) {
+    .model-card {
+        grid-template-columns: 1fr;
+    }
+}
+
+.test-results {
+    background-color: white;
+    padding: 20px;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.test-suite {
+    margin-bottom: 20px;
+}
+
+.test-item {
+    margin-bottom: 10px;
+}
+
+.success {
+    color: green;
+}
+
+.error {
+    color: red;
+}
+
+.error-message {
+    font-size: 0.9em;
+    margin-top: 5px;
+    color: #e74c3c;
+}
+
+.model-card {
+    background-color: white;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 10px;
+    padding: 10px;
+}
+
+.model-item button {
+    flex-shrink: 0; /* 防止按钮被压缩 */
+}
